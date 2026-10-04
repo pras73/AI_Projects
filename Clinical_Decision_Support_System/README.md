@@ -1,4 +1,5 @@
 Summary
+
 The Multimodal Clinical Decision Support System (CDSS) is a real-time healthcare agent engineered for emergency room triage and clinical risk stratification. It processes three distinct data modalities simultaneously:
 
 Numerical Physiological Vitals: Evaluated deterministically via the National Early Warning Score (NEWS2).
