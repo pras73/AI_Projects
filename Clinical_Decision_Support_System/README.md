@@ -18,14 +18,29 @@ Generative & Retrieval Pipelines: Handles semantic literature searching (ChromaD
 
 
  In-Depth Component Explanations
+ 
  A. The NEWS2 Vitals Engine (calculate_news_score)
- Purpose: Provides non-hallucinatory risk scoring.Mechanism: Checks numeric vital inputs against hardcoded clinical thresholds established by the National Health Service (NHS) NEWS2 framework.Why Python instead of an LLM prompt? LLMs struggle with multi-step range evaluations. Pure Python guarantees 100% mathematical determinism.
+ 
+ Purpose: Provides non-hallucinatory risk scoring.
+ 
+ Mechanism: Checks numeric vital inputs against hardcoded clinical thresholds established by the National Health Service (NHS) NEWS2 framework. LLMs struggle with multi-step range evaluations. Pure Python guarantees 100% mathematical determinism.
+ 
  B. Vector Database Retrieval (vector_db)
- Purpose: Ingests unstructured chief complaints and fetches exact medical protocols.Mechanism: Converts clinical text into 384-dimensional dense vectors using all-MiniLM-L6-v2. Performs cosine similarity search inside ChromaDB.
+ 
+ Purpose: Ingests unstructured chief complaints and fetches exact medical protocols.
+ 
+ Mechanism: Converts clinical text into 384-dimensional dense vectors using all-MiniLM-L6-v2. Performs cosine similarity search inside ChromaDB.
+ 
  Benefit: Ensures that clinical recommendations are grounded directly in vetted medical literature rather than generative model memory.
+ 
  C. Vision Transformer Pipeline (vision_analyzer)
+ 
  Purpose: Inspects uploaded medical scans or clinical photographs.
+ 
  Mechanism: Uses the Salesforce/blip-image-captioning-base multimodal architecture to generate descriptive text representations of input images.
+ 
  D. Red-Flag Safety Intercepts
+ 
  Purpose: Prevents high-risk patients from being downgraded by language synthesis.
+ 
  Mechanism: Scans inputs for critical bounds. If triggered, forces priority escalation and displays explicit alert badges.
