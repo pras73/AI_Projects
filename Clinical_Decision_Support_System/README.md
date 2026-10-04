@@ -44,3 +44,7 @@ Generative & Retrieval Pipelines: Handles semantic literature searching (ChromaD
  Purpose: Prevents high-risk patients from being downgraded by language synthesis.
  
  Mechanism: Scans inputs for critical bounds. If triggered, forces priority escalation and displays explicit alert badges.
+
+
+ Medical Disclaimer
+IMPORTANT: This repository is a technical software demonstration and educational prototype created for portfolio and research purposes. It is not a licensed medical device and must not be used for actual clinical diagnosis, patient triage, or direct healthcare delivery. All clinical decisions must be performed by qualified human medical professionals.
